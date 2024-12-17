@@ -1,3 +1,7 @@
+<?php
+// Підключення конфігурацій
+include 'config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -829,86 +833,87 @@
         <p class="paragraph-modal">
           Leave your contacts and we will call you back
         </p>
-        <form name="contact-form">
-          <div class="form-name">
-            <label class="label-name" for="user-name">Name</label>
+        <form name="contact-form" action="process.php" method="POST">
+  <div class="form-name">
+    <label class="label-name" for="user-name">Name</label>
+    <div class="modal-phone">
+      <input
+        id="user-name"
+        name="user-name"
+        type="text"
+        class="input-phone"
+        required
+      />
+      <svg width="18" height="24" class="icon-modal">
+        <use href="./images/icons.svg#icon-person"></use>
+      </svg>
+    </div>
+  </div>
 
-            <div class="modal-phone">
-              <input
-                id="user-name"
-                name="user-name"
-                type="text"
-                class="input-phone"
-              />
-              <svg width="18" height="24" class="icon-modal">
-                <use href="./images/icons.svg#icon-person"></use>
-              </svg>
-            </div>
-          </div>
+  <div class="form-name">
+    <label class="label-name" for="user-phone">Phone</label>
+    <div class="modal-phone">
+      <input
+        id="user-phone"
+        name="user-phone"
+        type="tel"
+        class="input-phone"
+        required
+      />
+      <svg width="18" height="24" class="icon-modal">
+        <use href="./images/icons.svg#icon-phone"></use>
+      </svg>
+    </div>
+  </div>
 
-          <div class="form-name">
-            <label class="label-name" for="user-phone">Phone</label>
+  <div class="form-name">
+    <label class="label-name" for="user-email">Email</label>
+    <div class="modal-phone">
+      <input
+        id="user-email"
+        name="user-email"
+        type="email"
+        class="input-phone"
+        required
+      />
+      <svg width="18" height="24" class="icon-modal">
+        <use href="./images/icons.svg#icon-email"></use>
+      </svg>
+    </div>
+  </div>
 
-            <div class="modal-phone">
-              <input
-                id="user-phone"
-                name="user-phone"
-                type="tel"
-                class="input-phone"
-              />
-              <svg width="18" height="24" class="icon-modal">
-                <use href="./images/icons.svg#icon-phone"></use>
-              </svg>
-            </div>
-          </div>
+  <div class="form-comment">
+    <label class="label-name" for="user-comment">Comment</label>
+    <textarea
+      id="user-comment"
+      name="user-comment"
+      placeholder="Text input"
+      class="textarea-comment"
+    ></textarea>
+  </div>
 
-          <div class="form-name">
-            <label class="label-name" for="user-email">Email</label>
+  <div class="user-privacy">
+    <input
+      id="user-privacy"
+      type="checkbox"
+      value="true"
+      name="user-privacy"
+      class="check-input visually-hidden"
+      required
+    />
+    <label for="user-privacy" class="label-usr-privacy">
+      <span class="span-usr-privacy">
+        <svg width="10" height="8" class="modal-privacy-check">
+          <use href="./images/icons.svg#icon-tick"></use>
+        </svg>
+      </span>
+      I accept the terms and conditions of the
+      <a href="" class="privacy-link"> Privacy Policy</a>
+    </label>
+  </div>
+  <button class="send-button" type="submit">Send</button>
+</form>
 
-            <div class="modal-phone">
-              <input
-                id="user-email"
-                name="user-email"
-                type="email"
-                class="input-phone"
-              />
-              <svg width="18" height="24" class="icon-modal">
-                <use href="./images/icons.svg#icon-email"></use>
-              </svg>
-            </div>
-          </div>
-
-          <div class="form-comment">
-            <label class="label-name" for="user-comment">Comment</label>
-            <textarea
-              id="user-comment"
-              name="user-comment"
-              placeholder="Text input"
-              class="textarea-comment"
-            ></textarea>
-          </div>
-
-          <div class="user-privacy">
-            <input
-              id="user-privacy"
-              type="checkbox"
-              value="true"
-              name="user-privacy"
-              class="check-input visually-hidden"
-              required
-            />
-            <label for="user-privacy" class="label-usr-privacy">
-              <span class="span-usr-privacy">
-                <svg width="10" height="8" class="modal-privacy-check">
-                  <use href="./images/icons.svg#icon-tick"></use>
-                </svg>
-              </span>
-              I accept the terms and conditions of the
-              <a href="" class="privacy-link"> Privacy Policy</a>
-            </label>
-          </div>
-          <button class="send-button" type="submit">Send</button>
-        </form>
       </div>
     </div>
 
